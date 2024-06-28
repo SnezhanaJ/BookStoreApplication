@@ -1,0 +1,84 @@
+[
+  {
+    "ContainingType": "BookStore.Web.Controllers.API.AdminController",
+    "Method": "Edit",
+    "RelativePath": "api/Admin/Edit",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "author",
+        "Type": "BookStore.Domain.Domain.Author",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BookStore.Web.Controllers.API.AdminController",
+    "Method": "GetAllAuthors",
+    "RelativePath": "api/Admin/GetAllAuthors",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[BookStore.Domain.Domain.Author, BookStore.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BookStore.Web.Controllers.API.AdminController",
+    "Method": "GetAllBooks",
+    "RelativePath": "api/Admin/GetAllBooks",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[BookStore.Domain.Domain.Books, BookStore.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BookStore.Web.Controllers.API.AdminController",
+    "Method": "GetAuthorDetails",
+    "RelativePath": "api/Admin/GetAuthorDetails",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "BookStore.Domain.Domain.BaseEntity",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "BookStore.Domain.Domain.Author",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  }
+]
