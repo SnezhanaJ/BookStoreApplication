@@ -15,5 +15,9 @@ namespace BookStore.Service.Interface
         void UpdateExistingPublisher(Publisher p);
         void DeletePublisher(Guid id);
 
+        Publisher GetDetailsWithBaseEntity(BaseEntity id);
+        bool UpdatePublisher(Publisher p);
+        bool DeletePublisherBoolean(BaseEntity id);
+
     }
 }

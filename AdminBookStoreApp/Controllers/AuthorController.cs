@@ -16,6 +16,27 @@ namespace AdminBookStoreApp.Controllers
             var data = response.Content.ReadAsAsync<List<Author>>().Result;
             return View(data);
         }
+
+        public IActionResult Details(string id)
+        {
+            HttpClient client = new HttpClient();
+            //added in next aud
+            string URL = "https://localhost:44305/api/Admin/GetAuthorDetails";
+            var model = new
+            {
+                Id = id
+            };
+
+            HttpContent content = new StringContent(JsonConvert.SerializeObject(model), Encoding.UTF8, "application/json");
+
+            HttpResponseMessage response = client.PostAsync(URL, content).Result;
+
+            var result = response.Content.ReadAsAsync<Author>().Result;
+
+
+            return View(result);
+
+        }
         public IActionResult Edit(string id)
         {
             HttpClient client = new HttpClient();
