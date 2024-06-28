@@ -28,6 +28,20 @@ namespace BookStore.Service.Implementation
             _repository.Delete(author);
         }
 
+        public bool DeleteAuthorBoolean(BaseEntity id)
+        {
+            try
+            {
+                var author = GetDetailsWithBaseEntity(id);
+                _repository.Delete(author);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
         public List<Author> GetAll()
         {
             return _repository.GetAll().ToList();

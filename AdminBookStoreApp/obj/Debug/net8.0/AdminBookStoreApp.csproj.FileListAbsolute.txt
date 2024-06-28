@@ -33,3 +33,4 @@ C:\Users\User\Desktop\BookStoreAppProject\AdminBookStoreApp\obj\Debug\net8.0\ref
 C:\Users\User\Desktop\BookStoreAppProject\AdminBookStoreApp\obj\Debug\net8.0\AdminBookStoreApp.pdb
 C:\Users\User\Desktop\BookStoreAppProject\AdminBookStoreApp\obj\Debug\net8.0\AdminBookStoreApp.genruntimeconfig.cache
 C:\Users\User\Desktop\BookStoreAppProject\AdminBookStoreApp\obj\Debug\net8.0\ref\AdminBookStoreApp.dll
+C:\Users\User\Desktop\BookStoreAppProject\AdminBookStoreApp\obj\Debug\net8.0\AdminBookStoreApp.sourcelink.json

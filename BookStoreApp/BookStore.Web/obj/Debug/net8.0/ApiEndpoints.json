@@ -1,8 +1,40 @@
 [
   {
     "ContainingType": "BookStore.Web.Controllers.API.AdminController",
-    "Method": "Edit",
-    "RelativePath": "api/Admin/Edit",
+    "Method": "CreateAuthor",
+    "RelativePath": "api/Admin/CreateAuthor",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "author",
+        "Type": "BookStore.Domain.Domain.Author",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BookStore.Web.Controllers.API.AdminController",
+    "Method": "DeleteAuthor",
+    "RelativePath": "api/Admin/DeleteAuthor",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "BookStore.Domain.Domain.BaseEntity",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BookStore.Web.Controllers.API.AdminController",
+    "Method": "EditAuthor",
+    "RelativePath": "api/Admin/EditAuthor",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,

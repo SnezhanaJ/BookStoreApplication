@@ -17,5 +17,6 @@ namespace BookStore.Service.Interface
         void DeleteAuthor(Guid id);
         Author GetDetailsWithBaseEntity(BaseEntity id);
         bool UpdateAuthor(Author p);
+        bool DeleteAuthorBoolean(BaseEntity id);
     }
 }

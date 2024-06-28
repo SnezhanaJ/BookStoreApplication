@@ -57,5 +57,31 @@ namespace BookStore.Web.Controllers.API
             }
             return BadRequest(ModelState);
         }
+
+        [HttpPost("DeleteAuthor")]
+        public IActionResult DeleteAuthor(BaseEntity id)
+        {
+            if (ModelState.IsValid)
+            {
+                var result = _authorService.DeleteAuthorBoolean(id);
+                if (result)
+                {
+                    return Ok();
+                }
+                else
+                {
+                    return BadRequest("Faild to delete author");
+                }
+            }
+            return BadRequest(ModelState) ;
+        }
+
+        [HttpPost("[action]")]
+        public IActionResult CreateAuthor(Author author)
+        {
+            _authorService.CreateNewAuthor(author);
+            return Ok();
+        }
+
     }
 }
