@@ -17,6 +17,22 @@
   },
   {
     "ContainingType": "BookStore.Web.Controllers.API.AdminController",
+    "Method": "CreateBooks",
+    "RelativePath": "api/Admin/CreateBooks",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "author",
+        "Type": "BookStore.Domain.Domain.Books",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BookStore.Web.Controllers.API.AdminController",
     "Method": "CreatePublisher",
     "RelativePath": "api/Admin/CreatePublisher",
     "HttpMethod": "POST",
@@ -35,6 +51,22 @@
     "ContainingType": "BookStore.Web.Controllers.API.AdminController",
     "Method": "DeleteAuthor",
     "RelativePath": "api/Admin/DeleteAuthor",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "BookStore.Domain.Domain.BaseEntity",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BookStore.Web.Controllers.API.AdminController",
+    "Method": "DeleteBooks",
+    "RelativePath": "api/Admin/DeleteBooks",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -74,6 +106,22 @@
       {
         "Name": "author",
         "Type": "BookStore.Domain.Domain.Author",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BookStore.Web.Controllers.API.AdminController",
+    "Method": "EditBooks",
+    "RelativePath": "api/Admin/EditBooks",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "author",
+        "Type": "BookStore.Domain.Domain.Books",
         "IsRequired": true
       }
     ],
@@ -172,6 +220,32 @@
     "ReturnTypes": [
       {
         "Type": "BookStore.Domain.Domain.Author",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BookStore.Web.Controllers.API.AdminController",
+    "Method": "GetBooksDetails",
+    "RelativePath": "api/Admin/GetBooksDetails",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "BookStore.Domain.Domain.BaseEntity",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "BookStore.Domain.Domain.Books",
         "MediaTypes": [
           "text/plain",
           "application/json",

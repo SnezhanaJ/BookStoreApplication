@@ -28,6 +28,20 @@ namespace BookStore.Service.Implementation
            _repository.Delete(book);
         }
 
+        public bool DeleteBooksBoolean(BaseEntity id)
+        {
+            try
+            {
+                var book = GetDetailsWithBaseEntity(id);
+                _repository.Delete(book);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
         public List<Books> GetAll()
         {
             return _repository.GetAll().ToList();
@@ -36,6 +50,25 @@ namespace BookStore.Service.Implementation
         public Books GetDetails(Guid? id)
         {
             return _repository.Get(id);
+        }
+
+        public Books GetDetailsWithBaseEntity(BaseEntity id)
+        {
+            return _repository.GetDetailsWithBaseEntity(id);
+        }
+
+        public bool UpdateBook(Books p)
+        {
+            try
+            {
+                _repository.Update(p);
+                return true;
+
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
 
         public void UpdateExistingBook(Books p)

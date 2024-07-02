@@ -52,6 +52,11 @@ namespace BookStore.Web.Controllers.API
         {
             return this._publisherService.GetDetailsWithBaseEntity(id);
         }
+        [HttpPost("[action]")]
+        public Books GetBooksDetails(BaseEntity id)
+        {
+            return this._booksService.GetDetailsWithBaseEntity(id);
+        }
 
         [HttpPost("[action]")]
 
@@ -81,6 +86,27 @@ namespace BookStore.Web.Controllers.API
             if (ModelState.IsValid)
             {
                 var result =_authorService.UpdateAuthor(author);
+                if (result)
+                {
+                    return Ok();
+                }
+                else
+                {
+                    return BadRequest("Failed to update author");
+                }
+            }
+            return BadRequest(ModelState);
+        }
+
+
+        [HttpPost("[action]")]
+
+        public IActionResult EditBooks(Books author)
+        {
+
+            if (ModelState.IsValid)
+            {
+                var result = _booksService.UpdateBook(author);
                 if (result)
                 {
                     return Ok();
@@ -140,6 +166,31 @@ namespace BookStore.Web.Controllers.API
         public IActionResult CreatePublisher(Publisher author)
         {
             _publisherService.CreateNewPublisher(author);
+            return Ok();
+        }
+
+        [HttpPost("DeleteBooks")]
+        public IActionResult DeleteBooks(BaseEntity id)
+        {
+            if (ModelState.IsValid)
+            {
+                var result = _booksService.DeleteBooksBoolean(id);
+                if (result)
+                {
+                    return Ok();
+                }
+                else
+                {
+                    return BadRequest("Faild to delete author");
+                }
+            }
+            return BadRequest(ModelState);
+        }
+
+        [HttpPost("[action]")]
+        public IActionResult CreateBooks(Books author)
+        {
+            _booksService.CreateNewBook(author);
             return Ok();
         }
 

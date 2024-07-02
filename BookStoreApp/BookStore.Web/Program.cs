@@ -38,6 +38,8 @@ internal class Program
         builder.Services.AddTransient<IEmailService, EmailService>();
         builder.Services.Configure<StripeSettings>(builder.Configuration.GetSection("Stripe"));
 
+        builder.Services.AddControllersWithViews().AddNewtonsoftJson(options =>
+    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
         var app = builder.Build();
 
