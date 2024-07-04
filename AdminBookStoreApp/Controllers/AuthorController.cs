@@ -57,7 +57,7 @@ namespace AdminBookStoreApp.Controllers
             return View(result);
 
         }
-        public IActionResult Edit(Author author)
+        public IActionResult Update(Author author)
         {
             HttpClient client = new HttpClient();
             string URL = "https://localhost:44305/api/Admin/EditAuthor";

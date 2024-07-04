@@ -2,7 +2,91 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<style>
+    .nav-card {
+        padding: 20px;
+        border-radius: 8px;
+        margin: 10px;
+        text-align: center;
+        color: white;
+        transition: transform 0.2s;
+    }
+
+        .nav-card:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-card.authors {
+            background-color: #007bff;
+        }
+
+        .nav-card.publishers {
+            background-color: #28a745;
+        }
+
+        .nav-card.books {
+            background-color: #ffc107;
+        }
+
+        .nav-card.orders {
+            background-color: red;
+        }
+
+        .nav-card.import-books {
+            background-color: darkorange;
+        }
+
+    a.nav-card-link {
+        text-decoration: none;
+        color: inherit;
+    }
+
+        a.nav-card-link:hover {
+            color: inherit;
+        }
+</style>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <a asp-area="" asp-controller="Author" asp-action="Index" class="nav-card-link">
+                <div class="nav-card authors">
+                    <h3>Authors</h3>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-6">
+            <a asp-area="" asp-controller="Publishers" asp-action="Index" class="nav-card-link">
+                <div class="nav-card publishers">
+                    <h3>Publishers</h3>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <a asp-area="" asp-controller="Books" asp-action="Index" class="nav-card-link">
+                <div class="nav-card books">
+                    <h3>Books</h3>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-6">
+            <a asp-area="" asp-controller="Orders" asp-action="Index" class="nav-card-link">
+                <div class="nav-card orders">
+                    <h3>Orders</h3>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <a asp-area="" asp-controller="Books" asp-action="ImportBooks" class="nav-card-link">
+                <div class="nav-card import-books">
+                    <h3>Import Books</h3>
+                </div>
+            </a>
+        </div>
+ 
+    </div>
 </div>
