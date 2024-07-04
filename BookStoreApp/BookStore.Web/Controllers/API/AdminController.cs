@@ -2,6 +2,7 @@
 using BookStore.Service.Interface;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -207,5 +208,36 @@ namespace BookStore.Web.Controllers.API
             return Ok();
         }
 
+        [HttpPost("[action]")]
+        public bool ImportAllUsers(List<Books> model)
+        {
+            bool status = true;
+
+            foreach (var item in model)
+            {
+                var bookCheck = _booksService.GetAll().FirstOrDefault(b => b.Title == item.Title);
+                var book = new Books
+                {
+                    Title = item.Title,
+                    BookImage = item.BookImage,
+                    Price = item.Price,
+                    ReleaseDate = item.ReleaseDate,
+                    Publisher = item.Publisher,
+                    Author = item.Author,
+                };
+
+                if (bookCheck == null)
+                {
+                   
+
+                    _booksService.CreateNewBook(book);
+                }
+                else
+                {
+                    _booksService.UpdateBook(book);
+                }
+            }
+            return status;
+        }
     }
 }

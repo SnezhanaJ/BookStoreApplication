@@ -55,3 +55,4 @@ C:\Users\User\Desktop\BookStoreAppProject\AdminBookStoreApp\bin\Debug\net8.0\Exc
 C:\Users\User\Desktop\BookStoreAppProject\AdminBookStoreApp\bin\Debug\net8.0\Irony.dll
 C:\Users\User\Desktop\BookStoreAppProject\AdminBookStoreApp\bin\Debug\net8.0\System.IO.Packaging.dll
 C:\Users\User\Desktop\BookStoreAppProject\AdminBookStoreApp\bin\Debug\net8.0\XLParser.dll
+C:\Users\User\Desktop\BookStoreAppProject\AdminBookStoreApp\bin\Debug\net8.0\ExcelDataReader.dll

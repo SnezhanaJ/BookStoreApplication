@@ -1,4 +1,6 @@
 ﻿using AdminBookStoreApp.Models;
+using DocumentFormat.OpenXml.Spreadsheet;
+using ExcelDataReader;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Newtonsoft.Json;
@@ -40,7 +42,7 @@ namespace AdminBookStoreApp.Controllers
             string URLA = "https://localhost:44305/api/Admin/GetAllAuthors";
 
             HttpResponseMessage responseAuthors = client.GetAsync(URLA).Result;
-            var data = responseAuthors.Content.ReadAsAsync<List<Author>>().Result;
+            var data = responseAuthors.Content.ReadAsAsync<List<Models.Author>>().Result;
             // Fetch the authors from the database
             var authors = data.Select(a => new {
                 Id = a.Id,
@@ -135,7 +137,7 @@ namespace AdminBookStoreApp.Controllers
             string URL = "https://localhost:44305/api/Admin/GetAllAuthors";
 
             HttpResponseMessage response = client.GetAsync(URL).Result;
-            var data = response.Content.ReadAsAsync<List<Author>>().Result;
+            var data = response.Content.ReadAsAsync<List<Models.Author>>().Result;
             // Fetch the authors from the database
             var authors = data.Select(a => new {
                 Id = a.Id,
@@ -176,6 +178,70 @@ namespace AdminBookStoreApp.Controllers
                 ModelState.AddModelError(string.Empty, "Failed to create author");
                 return View(author);
             }
+        }
+
+        public IActionResult ImportBooksIndex()
+        {
+            return View();
+        }
+
+        public IActionResult ImportBooks(IFormFile file)
+        {
+            string pathToUpload = $"{Directory.GetCurrentDirectory()}\\files\\{file.FileName}";
+            using (FileStream fileStream = System.IO.File.Create(pathToUpload))
+            {
+                file.CopyTo(fileStream);
+                fileStream.Flush();
+            }
+            List<Books> books = getAllBooksFromFile(file.FileName);
+            HttpClient client = new HttpClient();
+            string URL = "https://localhost:44305/api/Admin/ImportAllUsers";
+
+            HttpContent content = new StringContent(JsonConvert.SerializeObject(books), Encoding.UTF8, "application/json");
+
+            HttpResponseMessage response = client.PostAsync(URL, content).Result;
+
+            var result = response.Content.ReadAsAsync<bool>().Result;
+
+            return RedirectToAction("Index", "Books");
+        }
+
+        private List<Books> getAllBooksFromFile(string fileName)
+        {
+            List<Books> books = new List<Books>();
+            string filePath = $"{Directory.GetCurrentDirectory()}\\files\\{fileName}";
+
+            System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
+
+            using (var stream = System.IO.File.Open(filePath, FileMode.Open, FileAccess.Read))
+            {
+                using (var reader = ExcelReaderFactory.CreateReader(stream))
+                {
+                    while (reader.Read())
+                    {
+                        books.Add(new Models.Books
+                        {
+                            Title = reader.GetValue(0).ToString(),
+                            BookImage = reader.GetValue(1).ToString(),
+                            Price = Convert.ToDouble(reader.GetValue(2).ToString()),
+                            ReleaseDate = Convert.ToDateTime(reader.GetValue(3).ToString()),
+
+                            Publisher = new Publisher
+                            {
+                                Name = reader.GetValue(4)?.ToString() // Assuming publisher name is in column 4
+                            },
+
+                            Author = new Models.Author
+                            {
+                                FirstName = reader.GetValue(5)?.ToString(), // Assuming first name is in column 5
+                                LastName = reader.GetValue(6)?.ToString()   // Assuming last name is in column 6
+                            }
+                        });
+                    }
+
+                }
+            }
+            return books;
         }
     }
 }
