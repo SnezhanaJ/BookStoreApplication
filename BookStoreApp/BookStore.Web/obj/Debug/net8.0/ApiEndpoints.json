@@ -145,6 +145,26 @@
   },
   {
     "ContainingType": "BookStore.Web.Controllers.API.AdminController",
+    "Method": "GetAllActiveOrders",
+    "RelativePath": "api/Admin/GetAllActiveOrders",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[BookStore.Domain.Domain.Order, BookStore.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BookStore.Web.Controllers.API.AdminController",
     "Method": "GetAllAuthors",
     "RelativePath": "api/Admin/GetAllAuthors",
     "HttpMethod": "GET",
@@ -246,6 +266,32 @@
     "ReturnTypes": [
       {
         "Type": "BookStore.Domain.Domain.Books",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BookStore.Web.Controllers.API.AdminController",
+    "Method": "GetDetailsForOrder",
+    "RelativePath": "api/Admin/GetDetailsForOrder",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "BookStore.Domain.Domain.BaseEntity",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "BookStore.Domain.Domain.Order",
         "MediaTypes": [
           "text/plain",
           "application/json",

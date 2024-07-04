@@ -28,9 +28,10 @@ internal class Program
 
         builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
         builder.Services.AddScoped(typeof(IUserRepository), typeof(UserRepository));
+        builder.Services.AddScoped(typeof(IOrderRepository), typeof(OrderRepository));
 
 
-
+        builder.Services.AddTransient<IOrderService, OrderService>();
         builder.Services.AddTransient<IPublisherService, PublisherService>();
         builder.Services.AddTransient<IAuthorService, AuthorService>();
         builder.Services.AddTransient<IBooksService, BooksService>();

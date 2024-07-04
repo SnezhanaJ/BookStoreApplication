@@ -14,12 +14,25 @@ namespace BookStore.Web.Controllers.API
         private readonly IBooksService _booksService;
         private readonly IAuthorService _authorService;
         private readonly IPublisherService _publisherService;
+        private readonly IOrderService _orderService;
 
-        public AdminController(IBooksService booksService, IAuthorService authorService, IPublisherService publisherService)
+        public AdminController(IBooksService booksService, IAuthorService authorService, IPublisherService publisherService, IOrderService orderService)
         {
             _booksService = booksService;
             _authorService = authorService;
             _publisherService = publisherService;
+            _orderService = orderService;
+        }
+
+        [HttpGet("[action]")]
+        public List<Order> GetAllActiveOrders()
+        {
+            return this._orderService.GetAllOrders();
+        }
+        [HttpPost("[action]")]
+        public Order GetDetailsForOrder(BaseEntity model)
+        {
+            return _orderService.GetOrderDetails(model);
         }
 
         [HttpGet("[action]")]
