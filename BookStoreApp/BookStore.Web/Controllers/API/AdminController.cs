@@ -215,27 +215,84 @@ namespace BookStore.Web.Controllers.API
 
             foreach (var item in model)
             {
-                var bookCheck = _booksService.GetAll().FirstOrDefault(b => b.Title == item.Title);
-                var book = new Books
-                {
-                    Title = item.Title,
-                    BookImage = item.BookImage,
-                    Price = item.Price,
-                    ReleaseDate = item.ReleaseDate,
-                    Publisher = item.Publisher,
-                    Author = item.Author,
-                };
+                var existingBook = _booksService.GetAll().FirstOrDefault(b => b.Title == item.Title);
+               // var existingPublisher = _publisherService.GetAll().FirstOrDefault(b => b.Name == item.Publisher.Name);
+                //var existingAuthor = _authorService.GetAll().FirstOrDefault(b => b.FirstName == item.Author.FirstName && b.LastName == item.Author.LastName);
 
-                if (bookCheck == null)
+
+
+                if (existingBook == null)
                 {
-                   
+
+                    var book = new Books
+                    {
+                        Title = item.Title,
+                        BookImage = item.BookImage,
+                        Price = item.Price,
+                        ReleaseDate = item.ReleaseDate,
+                       
+                    };
+                    var existingPublisher = _publisherService.GetAll().FirstOrDefault(p => p.Name == item.Publisher.Name);
+                    var existingAuthor = _authorService.GetAll().FirstOrDefault(a => a.FirstName == item.Author.FirstName && a.LastName == item.Author.LastName);
+
+                    // Check if Publisher and Author exist
+                    if (existingPublisher == null)
+                    {
+                        // Publisher does not exist, so add it
+                        book.Publisher = item.Publisher;
+                    }
+                    else
+                    {
+                        // Publisher exists, assign the existing one
+                        book.Publisher = existingPublisher;
+                    }
+
+                    if (existingAuthor == null)
+                    {
+                        // Author does not exist, so add it
+                        book.Author = item.Author;
+                    }
+                    else
+                    {
+                        // Author exists, assign the existing one
+                        book.Author = existingAuthor;
+                    }
 
                     _booksService.CreateNewBook(book);
                 }
                 else
                 {
-                    _booksService.UpdateBook(book);
+                    existingBook.BookImage = item.BookImage;
+                    existingBook.Price = item.Price;
+                    existingBook.ReleaseDate = item.ReleaseDate;
+
+                    var existingPublisher = _publisherService.GetAll().FirstOrDefault(p => p.Name == item.Publisher.Name);
+                    var existingAuthor = _authorService.GetAll().FirstOrDefault(a => a.FirstName == item.Author.FirstName && a.LastName == item.Author.LastName);
+
+                    // Check if Publisher and Author exist
+                    if (existingPublisher != null)
+                    {
+                        existingBook.Publisher = existingPublisher;
+                    }
+                    else
+                    {
+                        existingBook.Publisher = item.Publisher;
+                    }
+
+                    if (existingAuthor != null)
+                    {
+                        existingBook.Author = existingAuthor;
+                    }
+                    else
+                    {
+                        existingBook.Author = item.Author;
+                    }
+
+                    _booksService.UpdateExistingBook(existingBook);
+           
                 }
+
+       
             }
             return status;
         }

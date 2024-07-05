@@ -3,11 +3,19 @@
   "WorkspaceRootPath": "C:\\Users\\User\\Desktop\\BookStoreAppProject\\BookStoreApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/aspnet_BookStore/True/SqlTable/dbo.Books.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{6D5CE0C3-A720-4C70-8F2F-D71599BA82FD}|BookStore.Web\\BookStore.Web.csproj|c:\\users\\user\\desktop\\bookstoreappproject\\bookstoreapp\\bookstore.web\\controllers\\api\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6D5CE0C3-A720-4C70-8F2F-D71599BA82FD}|BookStore.Web\\BookStore.Web.csproj|solutionrelative:bookstore.web\\controllers\\api\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1138D153-A9C0-41CB-AA2D-0230CFC3CB6D}|BookStore.Repository\\BookStore.Repository.csproj|c:\\users\\user\\desktop\\bookstoreappproject\\bookstoreapp\\bookstore.repository\\implementation\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1138D153-A9C0-41CB-AA2D-0230CFC3CB6D}|BookStore.Repository\\BookStore.Repository.csproj|solutionrelative:bookstore.repository\\implementation\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52AF19B1-36C5-4DE7-A5DD-B2223D4B9B65}|BookStore.Service\\BookStore.Service.csproj|c:\\users\\user\\desktop\\bookstoreappproject\\bookstoreapp\\bookstore.service\\implementation\\booksservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52AF19B1-36C5-4DE7-A5DD-B2223D4B9B65}|BookStore.Service\\BookStore.Service.csproj|solutionrelative:bookstore.service\\implementation\\booksservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/aspnet_BookStore/True/SqlTable/dbo.Publishers.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
     }
   ],
   "DocumentGroupContainers": [
@@ -44,25 +52,48 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "dbo.Books [Data]",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/aspnet_BookStore/True/SqlTable/dbo.Books.sql",
-              "ToolTip": "dbo.Books [Data]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-07-04T16:17:31.426Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "AdminController.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\BookStoreAppProject\\BookStoreApp\\BookStore.Web\\Controllers\\API\\AdminController.cs",
               "RelativeDocumentMoniker": "BookStore.Web\\Controllers\\API\\AdminController.cs",
               "ToolTip": "C:\\Users\\User\\Desktop\\BookStoreAppProject\\BookStoreApp\\BookStore.Web\\Controllers\\API\\AdminController.cs",
               "RelativeToolTip": "BookStore.Web\\Controllers\\API\\AdminController.cs",
-              "ViewState": "AQIAAMkAAAAAAAAAAAAAAN4AAAAnAAAA",
+              "ViewState": "AQIAANQAAAAAAAAAAAAkwOkAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-04T13:12:17.267Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BooksService.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\BookStoreAppProject\\BookStoreApp\\BookStore.Service\\Implementation\\BooksService.cs",
+              "RelativeDocumentMoniker": "BookStore.Service\\Implementation\\BooksService.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\BookStoreAppProject\\BookStoreApp\\BookStore.Service\\Implementation\\BooksService.cs",
+              "RelativeToolTip": "BookStore.Service\\Implementation\\BooksService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEkAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-05T22:06:28.109Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Repository.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\BookStoreAppProject\\BookStoreApp\\BookStore.Repository\\Implementation\\Repository.cs",
+              "RelativeDocumentMoniker": "BookStore.Repository\\Implementation\\Repository.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\BookStoreAppProject\\BookStoreApp\\BookStore.Repository\\Implementation\\Repository.cs",
+              "RelativeToolTip": "BookStore.Repository\\Implementation\\Repository.cs",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAAADQAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-05T22:08:20.272Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "dbo.Publishers [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/aspnet_BookStore/True/SqlTable/dbo.Publishers.sql",
+              "ToolTip": "dbo.Publishers [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-07-04T17:40:07.748Z"
             }
           ]
         }

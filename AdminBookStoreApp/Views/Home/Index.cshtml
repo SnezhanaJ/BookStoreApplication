@@ -33,6 +33,10 @@
         }
 
         .nav-card.import-books {
+            background-color: #20c997;
+        }
+
+        .nav-card.export-orders{
             background-color: darkorange;
         }
 
@@ -84,6 +88,13 @@
             <a asp-area="" asp-controller="Books" asp-action="ImportBooksIndex" class="nav-card-link">
                 <div class="nav-card import-books">
                     <h3>Import Books</h3>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-6">
+            <a asp-area="" asp-controller="Orders" asp-action="ExportAllOrders" class="nav-card-link">
+                <div class="nav-card export-orders">
+                    <h3>Export All Orders</h3>
                 </div>
             </a>
         </div>
