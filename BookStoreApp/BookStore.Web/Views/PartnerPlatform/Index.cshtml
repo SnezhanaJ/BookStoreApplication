@@ -1,0 +1,36 @@
+﻿@model List<BookStore.Domain.Domain.Enrollment>
+
+@{
+    ViewData["Title"] = "Enrollments";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row mb-5">
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            var item = Model[i];
+            <div class="col-3">
+                <div class="card" style="width: 18rem; height: 45rem;">
+                    <img src="@item.Course?.CourseImage" class="card-img-top" alt="Course image">
+                    <div class="card-body" >
+                        <h5 class="card-title">@item.Course?.Title</h5>
+                        <p class="card-text">@item.Course.Description</p>
+
+                    </div>
+
+                    <div class="card-body">
+                        
+                            <p class="card-text">Duration: @item.Course?.Duration min</p>
+                            <p class="card-text">Level: @item.Course?.Level</p>
+                       
+                    </div>
+                 
+                    <div class="card-footer">
+                        <a class="card-link btn btn-outline-dark form-control" href="/Courses/Details/@item.CourseId">View Course</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
