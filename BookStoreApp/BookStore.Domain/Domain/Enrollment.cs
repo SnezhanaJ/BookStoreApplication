@@ -9,8 +9,8 @@ namespace BookStore.Domain.Domain
     public class Enrollment : BaseEntity
     {
         public Guid? CourseId { get; set; }
-        public Guid? StudentId { get; set; }
-        public DateTime? DateOfCourseEnrollment { get; set; }
         public Course? Course { get; set; }
+        public string CourseDifficulty { get; set; }
+
     }
 }

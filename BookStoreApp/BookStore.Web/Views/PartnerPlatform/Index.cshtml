@@ -11,25 +11,31 @@
         {
             var item = Model[i];
             <div class="col-3">
-                <div class="card" style="width: 18rem; height: 45rem;">
+                <div class="card" style="width: 18rem; height: 50rem;">
                     <img src="@item.Course?.CourseImage" class="card-img-top" alt="Course image">
-                    <div class="card-body" >
-                        <h5 class="card-title">@item.Course?.Title</h5>
-                        <p class="card-text">@item.Course.Description</p>
-
-                    </div>
-
                     <div class="card-body">
+                        <h5 class="card-title">
+                            <b>@item.Course?.Title</b>
+                        </h5>
+                        <hr />
+                        <p class="card-text">@item.Course.Description</p>
+                        <p>@item.CourseId</p>
+                        <hr />
+                        </div>
+                    <div class="card-body">
+
+                   
                         
                             <p class="card-text">Duration: @item.Course?.Duration min</p>
+                        <hr />
                             <p class="card-text">Level: @item.Course?.Level</p>
+                        <hr />
+                        <p class="card-text">Course Difficulty: @item.CourseDifficulty</p>
                        
                     </div>
                  
-                    <div class="card-footer">
-                        <a class="card-link btn btn-outline-dark form-control" href="/Courses/Details/@item.CourseId">View Course</a>
-                    </div>
-                </div>
+                   
+                </div> 
             </div>
         }
     </div>

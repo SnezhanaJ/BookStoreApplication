@@ -1,0 +1,31 @@
+﻿@model BookStore.Domain.Domain.Enrollment
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-4">
+            <img class="img-fluid" src="@Model.Course.CourseImage" alt="Book image" style="height: 350px; object-fit: cover;">
+        </div>
+        <div class="col-md-8">
+            <div class="card" style="height: 100%; overflow: hidden;">
+                <div class="card-body" style="height: 100%; overflow-y: auto;">
+                    <h4 class="card-title">@Html.DisplayFor(model => model.Course.Title)</h4>
+                    <p class="card-text"><strong>Decsription:</strong> @Html.DisplayFor(model => model.Course.Description)</p>
+                    <p class="card-text"><strong>Level:</strong> @Html.DisplayFor(model => model.Course.Level)</p>
+                    <p class="card-text"><strong>Duration:</strong> @Html.DisplayFor(model => model.Course.Duration)</p>
+                    <p class="card-text"><strong>Difficulty:</strong> @Html.DisplayFor(model => model.CourseDifficulty)</p>
+                </div>
+                <div class="card-footer" style="position: absolute; bottom: 0; width: 100%;">
+                    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
