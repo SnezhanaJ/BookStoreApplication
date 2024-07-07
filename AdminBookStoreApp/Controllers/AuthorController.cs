@@ -10,7 +10,7 @@ namespace AdminBookStoreApp.Controllers
         public IActionResult Index()
         {
             HttpClient client = new HttpClient();
-            string URL = "https://localhost:44305/api/Admin/GetAllAuthors";
+            string URL = "https://bookstoreweb20240707160345.azurewebsites.net/api/Admin/GetAllAuthors";
 
             HttpResponseMessage response = client.GetAsync(URL).Result;
             var data = response.Content.ReadAsAsync<List<Author>>().Result;
@@ -21,7 +21,7 @@ namespace AdminBookStoreApp.Controllers
         {
             HttpClient client = new HttpClient();
             //added in next aud
-            string URL = "https://localhost:44305/api/Admin/GetAuthorDetails";
+            string URL = "https://bookstoreweb20240707160345.azurewebsites.net/api/Admin/GetAuthorDetails";
             var model = new
             {
                 Id = id
@@ -41,7 +41,7 @@ namespace AdminBookStoreApp.Controllers
         {
             HttpClient client = new HttpClient();
             //added in next aud
-            string URL = "https://localhost:44305/api/Admin/GetAuthorDetails";
+            string URL = "https://bookstoreweb20240707160345.azurewebsites.net/api/Admin/GetAuthorDetails";
             var model = new
             {
                 Id = id
@@ -60,7 +60,7 @@ namespace AdminBookStoreApp.Controllers
         public IActionResult Update(Author author)
         {
             HttpClient client = new HttpClient();
-            string URL = "https://localhost:44305/api/Admin/EditAuthor";
+            string URL = "https://bookstoreweb20240707160345.azurewebsites.net/api/Admin/EditAuthor";
 
             HttpContent content = new StringContent(JsonConvert.SerializeObject(author), Encoding.UTF8, "application/json");
 
@@ -83,7 +83,7 @@ namespace AdminBookStoreApp.Controllers
 
             HttpClient client = new HttpClient();
             //added in next aud
-            string URL = "https://localhost:44305/api/Admin/DeleteAuthor";
+            string URL = "https://bookstoreweb20240707160345.azurewebsites.net/api/Admin/DeleteAuthor";
             var model = new
             {
                 Id = id
@@ -107,7 +107,7 @@ namespace AdminBookStoreApp.Controllers
         public IActionResult Create(Author author)
         {
             HttpClient client = new HttpClient();
-            string URL = "https://localhost:44305/api/Admin/CreateAuthor";
+            string URL = "https://bookstoreweb20240707160345.azurewebsites.net/api/Admin/CreateAuthor";
 
             HttpContent content = new StringContent(JsonConvert.SerializeObject(author), Encoding.UTF8, "application/json");
 

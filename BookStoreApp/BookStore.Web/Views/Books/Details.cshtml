@@ -22,7 +22,6 @@
                     <p class="card-text"><strong>Author:</strong> @Html.DisplayFor(model => model.Author.FirstName) @Html.DisplayFor(model => model.Author.LastName)</p>
                 </div>
                 <div class="card-footer" style="position: absolute; bottom: 0; width: 100%;">
-                    <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-info">Edit</a>
                     <a asp-action="Index" class="btn btn-secondary">Back to List</a>
                 </div>
             </div>

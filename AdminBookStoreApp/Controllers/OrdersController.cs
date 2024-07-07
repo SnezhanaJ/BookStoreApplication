@@ -17,7 +17,7 @@ namespace AdminBookStoreApp.Controllers
         public IActionResult Index()
         {
             HttpClient client = new HttpClient();
-            string url = "https://localhost:44305/api/Admin/GetAllActiveOrders";
+            string url = "https://bookstoreweb20240707160345.azurewebsites.net/api/Admin/GetAllActiveOrders";
             HttpResponseMessage response = client.GetAsync(url).Result;
             var data = response.Content.ReadAsAsync<List<Order>>().Result;
             return View(data);
@@ -26,7 +26,7 @@ namespace AdminBookStoreApp.Controllers
         public IActionResult Details(string id)
         {
             HttpClient client = new HttpClient();
-            string url = "https://localhost:44305/api/Admin/GetDetailsForOrder";
+            string url = "https://bookstoreweb20240707160345.azurewebsites.net/api/Admin/GetDetailsForOrder";
             var model = new
             {
                 Id = id,
@@ -42,7 +42,7 @@ namespace AdminBookStoreApp.Controllers
         {
 
             HttpClient client = new HttpClient();
-            string url = "https://localhost:44305/api/Admin/GetDetailsForOrder";
+            string url = "https://bookstoreweb20240707160345.azurewebsites.net/api/Admin/GetDetailsForOrder";
             var model = new
             {
                 Id = id,
@@ -87,7 +87,7 @@ namespace AdminBookStoreApp.Controllers
                 worksheet.Cell(1, 2).Value = "Customer UserName";
                 worksheet.Cell(1, 3).Value = "Total Price";
                 HttpClient client = new HttpClient();
-                string URL = "https://localhost:44305/api/Admin/GetAllActiveOrders";
+                string URL = "https://bookstoreweb20240707160345.azurewebsites.net/api/Admin/GetAllActiveOrders";
 
                 HttpResponseMessage response = client.GetAsync(URL).Result;
                 var data = response.Content.ReadAsAsync<List<Order>>().Result;

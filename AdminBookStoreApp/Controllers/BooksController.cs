@@ -13,7 +13,7 @@ namespace AdminBookStoreApp.Controllers
         public IActionResult Index()
         {
             HttpClient client = new HttpClient();
-            string URL = "https://localhost:44305/api/Admin/GetAllBooks";
+            string URL = "https://bookstoreweb20240707160345.azurewebsites.net/api/Admin/GetAllBooks";
 
             HttpResponseMessage response = client.GetAsync(URL).Result;
             var data = response.Content.ReadAsAsync<List<Books>>().Result;
@@ -26,7 +26,7 @@ namespace AdminBookStoreApp.Controllers
         {
             HttpClient client = new HttpClient();
             //added in next aud
-            string URL = "https://localhost:44305/api/Admin/GetBooksDetails";
+            string URL = "https://bookstoreweb20240707160345.azurewebsites.net/api/Admin/GetBooksDetails";
             var model = new
             {
                 Id = id
@@ -39,7 +39,7 @@ namespace AdminBookStoreApp.Controllers
             var result = response.Content.ReadAsAsync<Books>().Result;
 
             HttpClient clientA = new HttpClient();
-            string URLA = "https://localhost:44305/api/Admin/GetAllAuthors";
+            string URLA = "https://bookstoreweb20240707160345.azurewebsites.net/api/Admin/GetAllAuthors";
 
             HttpResponseMessage responseAuthors = client.GetAsync(URLA).Result;
             var data = responseAuthors.Content.ReadAsAsync<List<Models.Author>>().Result;
@@ -54,7 +54,7 @@ namespace AdminBookStoreApp.Controllers
 
 
             HttpClient clientP = new HttpClient();
-            string URLP = "https://localhost:44305/api/Admin/GetAllPublishers";
+            string URLP = "https://bookstoreweb20240707160345.azurewebsites.net/api/Admin/GetAllPublishers";
 
             HttpResponseMessage responsePublishers = clientP.GetAsync(URLP).Result;
             var publishers = responsePublishers.Content.ReadAsAsync<List<Publisher>>().Result;
@@ -71,7 +71,7 @@ namespace AdminBookStoreApp.Controllers
         {
             HttpClient client = new HttpClient();
             //added in next aud
-            string URL = "https://localhost:44305/api/Admin/GetBooksDetails";
+            string URL = "https://bookstoreweb20240707160345.azurewebsites.net/api/Admin/GetBooksDetails";
             var model = new
             {
                 Id = id
@@ -93,7 +93,7 @@ namespace AdminBookStoreApp.Controllers
         public IActionResult Update(Books book)
         {
             HttpClient client = new HttpClient();
-            string URL = "https://localhost:44305/api/Admin/EditBooks";
+            string URL = "https://bookstoreweb20240707160345.azurewebsites.net/api/Admin/EditBooks";
 
             HttpContent content = new StringContent(JsonConvert.SerializeObject(book), Encoding.UTF8, "application/json");
 
@@ -116,7 +116,7 @@ namespace AdminBookStoreApp.Controllers
 
             HttpClient client = new HttpClient();
             //added in next aud
-            string URL = "https://localhost:44305/api/Admin/DeleteBooks";
+            string URL = "https://bookstoreweb20240707160345.azurewebsites.net/api/Admin/DeleteBooks";
             var model = new
             {
                 Id = id
@@ -134,7 +134,7 @@ namespace AdminBookStoreApp.Controllers
         public IActionResult Create()
         {
             HttpClient client = new HttpClient();
-            string URL = "https://localhost:44305/api/Admin/GetAllAuthors";
+            string URL = "https://bookstoreweb20240707160345.azurewebsites.net/api/Admin/GetAllAuthors";
 
             HttpResponseMessage response = client.GetAsync(URL).Result;
             var data = response.Content.ReadAsAsync<List<Models.Author>>().Result;
@@ -149,7 +149,7 @@ namespace AdminBookStoreApp.Controllers
 
 
             HttpClient clientP = new HttpClient();
-            string URLP = "https://localhost:44305/api/Admin/GetAllPublishers";
+            string URLP = "https://bookstoreweb20240707160345.azurewebsites.net/api/Admin/GetAllPublishers";
 
             HttpResponseMessage responsePublishers = clientP.GetAsync(URLP).Result;
             var publishers = responsePublishers.Content.ReadAsAsync<List<Publisher>>().Result;
@@ -162,7 +162,7 @@ namespace AdminBookStoreApp.Controllers
         public IActionResult Create(Books author)
         {
             HttpClient client = new HttpClient();
-            string URL = "https://localhost:44305/api/Admin/CreateBooks";
+            string URL = "https://bookstoreweb20240707160345.azurewebsites.net/api/Admin/CreateBooks";
 
             HttpContent content = new StringContent(JsonConvert.SerializeObject(author), Encoding.UTF8, "application/json");
 
@@ -195,7 +195,7 @@ namespace AdminBookStoreApp.Controllers
             }
             List<Books> books = getAllBooksFromFile(file.FileName);
             HttpClient client = new HttpClient();
-            string URL = "https://localhost:44305/api/Admin/ImportAllUsers";
+            string URL = "https://bookstoreweb20240707160345.azurewebsites.net/api/Admin/ImportAllUsers";
 
             HttpContent content = new StringContent(JsonConvert.SerializeObject(books), Encoding.UTF8, "application/json");
 
